@@ -3,8 +3,13 @@
 @tailwind utilities;
 
 body {
-  background-color: black;
+  background-color: #fff;
   color: white;
+}
+
+.mens_carousel .swiper-button-prev,
+.mens_carousel .swiper-button-next {
+  display: none !important;
 }
 
 /* Custom styles for the search input */
@@ -14,6 +19,7 @@ input[type="search"]::-webkit-search-results-button,
 input[type="search"]::-webkit-search-results-decoration {
   display: none;
 }
+
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -42,6 +48,7 @@ input[type="search"]::-webkit-search-results-decoration {
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
   }
+
   .dark {
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
@@ -69,12 +76,30 @@ input[type="search"]::-webkit-search-results-decoration {
     --chart-5: 340 75% 55%;
   }
 }
+
 @layer base {
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
   }
 }
 
+.hidden-scrollbar::-webkit-scrollbar {
+  display: none; /* Hides scrollbar in Webkit browsers */
+}
+
+.hidden-scrollbar {
+  -ms-overflow-style: none;  /* Hides scrollbar in IE/Edge */
+  scrollbar-width: none;  /* Hides scrollbar in Firefox */
+}
+
+.swiper-image {
+  transition: transform 0.3s ease-in-out;
+}
+
+.swiper-image:hover {
+  transform: scale(1.02); /* Scale image on hover */
+}
