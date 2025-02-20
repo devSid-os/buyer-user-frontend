@@ -4,10 +4,14 @@ import Link from "next/link"
 import { Search, Heart, ShoppingCart } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
+
+
+
 export default function Navbar() {
+
   return (
-    <nav className="bg-white fixed top-0 left-0 w-full z-50 px-4 py-1" style={{'borderBottom': '1px solid #eee'}}>
-      <div className="mx-auto flex items-center justify-between">
+    <nav className="bg-black px-4 py-4">
+      <div className="container mx-auto flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center text-black text-xl font-bold">
           <img className="w-16" src="/clothbuddy_logo.png" />ClothBuddy
@@ -43,12 +47,17 @@ export default function Navbar() {
           </Button>
 
           {/* Sign In Button */}
-          <Button variant="ghost" className="text-black hover:bg-[#073453] hover:text-white">
-            Sign In
+          <Button variant="ghost" className="text-white hover:bg-gray-800">
+            <Link href="/auth/signin" className="text-white text-xl font-bold">
+
+              Sign In
+            </Link>
           </Button>
         </div>
       </div>
     </nav>
   )
 }
+
+
 
